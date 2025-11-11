@@ -1,0 +1,18 @@
+name: github work flow for the lint
+on: workflow_dispatch
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: get the code
+              uses: actions/checkout@v5
+            - name: clone the dependencies
+              run: npm ci
+            - name: install Lint
+              run: npm run lint
+            - name: test code
+              run: npm test
+            - name: build code
+              run: bpm build
+            - name: deploy
+              run: echo "deploying...:"" 
