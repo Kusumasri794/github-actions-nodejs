@@ -13,6 +13,6 @@ jobs:
             - name: test code
               run: npm test
             - name: build code
-              run: rpm build
+              run: npm run build
             - name: deploy
               run: echo "deploying...:"" 
